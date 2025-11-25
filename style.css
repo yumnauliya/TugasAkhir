@@ -1,0 +1,49 @@
+body {
+font-family: Arial;
+color:#6b4d39;
+background: #e0c8b1;
+margin: 20px;
+}
+
+header {
+    height: 3cm;                /* tinggi header 3cm */
+    padding-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.7); /* bisa transparan biar terlihat background */
+    text-align: center;
+    display: flex;
+    align-items: center;         /* vertikal center */
+    justify-content: center;     /* horizontal center */
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* opsional, biar terlihat menonjol */
+}
+
+.grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+padding: 20px;
+margin-top: 20px;
+}
+
+.card {
+background:rgba(255, 255, 255, 0.7);
+padding: 15px;
+border-radius: 10px;
+box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+text-align: center;
+}
+
+.card img {
+width: 100%;
+border-radius: 10px;
+}
+
+button {
+padding: 10px;
+background: #6b4d39;
+color: white;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+}
