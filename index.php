@@ -6,7 +6,6 @@ include 'classes.php';
 
 // Modul 1 & 5: Ganti array data menjadi array objek Orchid
 $orchids_data = [
-    // Pastikan Anda memiliki gambar-gambar ini di folder 'gambar/'
     new Orchid("Anggrek Bulan (Putih)", 120000, 5, "6 bulan", "gambar/bulanp.jpg"),
     new Orchid("Anggrek Bulan (Merah)", 95000, 10, "4 bulan", "gambar/bulanm.jpg"),
     new Orchid("Anggrek Bulan (Ungu)", 250000, 3, "8 bulan", "gambar/bulanu.jpg"),
@@ -18,10 +17,10 @@ $orchids_data = [
 ];
 
 
-// Simpan stok di session jika belum ada (gunakan data OOP)
-// Jika stok sudah pernah diubah di buy.php, jangan reset
+// Simpan stok di session jika belum ada (menggunakan data OOP)
+// Supaya stok tidak ter-reset jika stok sudah pernah diubah di buy.php
 if(!isset($_SESSION['orchids'])){
-    // Kita simpan objek sebagai array sederhana di session agar mudah diakses di buy.php
+    // Tempat simpan objek sebagai array sederhana di session agar mudah diakses di buy.php
     $_SESSION['orchids'] = array_map(function($o) {
         // Menggunakan ReflectionProperty atau get_object_vars() untuk mengambil semua properti
         return get_object_vars($o); 

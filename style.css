@@ -111,7 +111,6 @@ body {
     margin-top: 0;
 }
 
-/* Card tetap dipertahankan */
 .card {
     background: rgba(217, 217, 217, 0.8);
     padding: 15px;
@@ -149,8 +148,6 @@ body {
     color: #6b4d7a;
 }
 
-
-/* Styling lainnya yang sudah ada */
 button {
     padding: 10px 20px;
     background: #4d3e53;
@@ -168,7 +165,6 @@ button:hover {
 }
 
 /* Buy page */
-/* --- Buy Page --- */
 .buy-card {
 background: rgba(217, 217, 217, 0.3);
 padding: 20px;
@@ -230,17 +226,10 @@ margin-bottom: 8px;
 border-radius: 6px;
 }
 
-/* --- Buy Page Navbar --- */
-/* style.css */
-
-/* ... (Kode di atas tidak diubah) ... */
-
-/* --- Halaman Pembelian (buy.php) --- */
-
 /* 1. Atur Body Buy Page */
 /* Aturan ini memastikan konten tidak tertutup fixed navbar dan memusatkan konten */
 .buy-page {
-    padding-top: 70px; /* Padding yang cukup untuk fixed buy-navbar setinggi ~60px */ 
+    padding-top: 70px; /* Padding yang cukup untuk fixed buy-navbar */ 
     display: flex;
     flex-direction: column;
     align-items: center; /* Memusatkan semua konten vertikal di halaman buy.php */
@@ -261,12 +250,9 @@ border-radius: 6px;
     width: 100%;
     z-index: 1000;
     box-sizing: border-box; /* Agar padding tidak menambah total lebar */
-    /* Akhir PROPERTI PENTING */
     
-    background: #ffffff; /* Ganti dengan putih solid agar elegan */
+    background: #ffffff; 
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    
-    /* Hapus margin-bottom: 20px; yang sebelumnya Anda tambahkan */
     margin-bottom: 0; 
 }
 
