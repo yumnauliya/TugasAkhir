@@ -1,63 +1,314 @@
+/* style.css */
+
 body {
-font-family: Arial;
-color:#4d3e53;
-;
-background: #ffffff;
-margin: 0;
+    font-family: Arial, sans-serif;
+    color: #4d3e53;
+    background: #f6f0f8;
+    margin: 0;
+    padding: 0;
+    /* Memberi padding atas agar tidak tertutup fixed header */
+    padding-top: 60px; 
 }
 
-header {
-<<<<<<< HEAD
+/* --- Navigasi dan Header Style --- */
+
+/* Fixed Header/Navbar */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    min-height: 150px;
-    max-height: 300px;
-    height: 35vh;
-    background-image: url("gambar/m3.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-=======
-    height: 3cm;            
-    padding-bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.7); 
-    text-align: center;
+    z-index: 1000;
+
     display: flex;
-    align-items: center;         
-    justify-content: center;    
-    font-size: 24px;
-    font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
->>>>>>> 179e01d63f4841f47dd2debe414b60969b532992
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 40px;
+    box-sizing: border-box;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* jarak gambar & teks */
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px; /* jarak antar tombol */
+}
+
+.nav-links a {
+    color: #4d3e53;
+    text-decoration: none;
+    font-weight: 500;
+    white-space: nowrap; /* supaya ga patah & ga hilang */
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    color: #8b68a4;
+}
+
+/* --- Main Sections Style --- */
+
+.section {
+    padding: 40px;
+    margin-bottom: 20px;
+}
+
+/* Home Section - Mirip tampilan awal di gambar */
+#home {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    min-height: 80vh;
+    padding-top: 0; /* Sesuaikan agar content lebih ke atas */
+}
+
+.home-image-container {
+    width: 40%;
+    /* Menggunakan proporsi dan border-radius seperti di gambar */
+    border-radius: 15px; 
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.home-image-container img {
+    width: 100%;
+    display: block;
+}
+
+.home-info {
+    width: 60%;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.7); /* Latar belakang untuk teks */
+}
+
+/* Products Section */
+#products h1 {
+    font-size: 32px;
+    border-bottom: 2px solid #4d3e53;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .grid {
-display: grid;
-grid-template-columns: repeat(6, 20fr);
-gap: 20px;
-padding: 20px;
-margin-top: 20px;
+    display: grid;
+    /* Layout adaptif: 2 kolom di layar kecil, 3 kolom di layar sedang, 4 kolom di layar besar */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px;
+    padding: 0;
+    margin-top: 0;
 }
 
+/* Card tetap dipertahankan */
 .card {
-background:rgba(217, 217, 217, 0.7);
-padding: 15px;
-border-radius: 10px;
-box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-text-align: center;
+    background: rgba(217, 217, 217, 0.8);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .card img {
-width: 100%;
-aspect-ratio: 3/4;
-object-fit: cover;
-border-radius: 10px;
+    width: 100%;          /* penuh di dalam card */
+    aspect-ratio: 3/4;    /* tinggi 4, lebar 3 supaya konsisten */
+    object-fit: cover;    /* crop gambar tapi tetap proporsional */
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
+
+/* Trivia Section */
+#trivia {
+    background-color: #e3d9e8; /* Warna background berbeda untuk visual separation */
+    padding: 60px 40px;
+    border-radius: 15px;
+}
+
+.trivia-item {
+    background: #f6f0f8;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.trivia-item h3 {
+    color: #6b4d7a;
+}
+
+
+/* Styling lainnya yang sudah ada */
 button {
+    padding: 10px 20px;
+    background: #4d3e53;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 15px;
+    width: 100%; /* Agar button di card terlihat rapi */
+}
+
+button:hover {
+    background: #6b4d7a;
+}
+
+/* Buy page */
+/* --- Buy Page --- */
+.buy-card {
+background: rgba(217, 217, 217, 0.3);
+padding: 20px;
+border-radius: 12px;
+max-width: 450px;
+margin: 20px auto;
+box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.buy-card label,
+.buy-card select,
+.buy-card input {
+display: block;
+width: 100%;
+margin-top: 10px;
+padding: 8px;
+border-radius: 6px;
+border: 1px solid #ccc;
+box-sizing: border-box;
+font-size: 16px;
+}
+
+.buy-card button {
 padding: 10px;
 background: #4d3e53;
 color: white;
 border: none;
 border-radius: 8px;
 cursor: pointer;
+transition: background 0.2s;
+margin-top: 15px;
+width: 100%;
+}
+
+.buy-card button:hover {
+background: #6b4d7a;
+}
+
+.success {
+color: green;
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+.error {
+color: red;
+margin-bottom: 10px;
+}
+
+ul {
+list-style: none;
+padding-left: 0;
+}
+
+ul li {
+background: rgba(217, 217, 217, 0.5);
+padding: 10px;
+margin-bottom: 8px;
+border-radius: 6px;
+}
+
+/* --- Buy Page Navbar --- */
+/* style.css */
+
+/* ... (Kode di atas tidak diubah) ... */
+
+/* --- Halaman Pembelian (buy.php) --- */
+
+/* 1. Atur Body Buy Page */
+/* Aturan ini memastikan konten tidak tertutup fixed navbar dan memusatkan konten */
+.buy-page {
+    padding-top: 70px; /* Padding yang cukup untuk fixed buy-navbar setinggi ~60px */ 
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Memusatkan semua konten vertikal di halaman buy.php */
+    min-height: 100vh;
+}
+
+/* 2. Atur Buy Navbar menjadi Fixed */
+.buy-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px; /* Lebarkan padding horizontal agar konsisten dengan .navbar */
+    
+    /* PROPERTI PENTING UNTUK FIXED */
+    position: fixed; /* Menjadikan navbar tetap di posisi layar */
+    top: 0; /* Menempel di bagian atas */
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box; /* Agar padding tidak menambah total lebar */
+    /* Akhir PROPERTI PENTING */
+    
+    background: #ffffff; /* Ganti dengan putih solid agar elegan */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    
+    /* Hapus margin-bottom: 20px; yang sebelumnya Anda tambahkan */
+    margin-bottom: 0; 
+}
+
+/* Styling konten utama di buy.php */
+.buy-page h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #4d3e53;
+    width: 90%;
+    max-width: 700px;
+}
+
+/* Buy Card (dibuat lebih rapi dan di tengah) */
+.buy-card {
+    /* Ubah margin agar hanya atas dan bawah, tidak ada 'auto' jika parentnya flex column center */
+    margin: 0 0 30px 0; 
+    max-width: 450px;
+    width: 90%; 
+    
+    /* Perbaikan visual */
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px; 
+    border-radius: 12px;
+}
+
+/* Riwayat Pembelian (agar juga di tengah) */
+.buy-page hr {
+    width: 90%;
+    max-width: 700px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 30px 0;
+}
+
+.buy-page h2 {
+    width: 90%;
+    max-width: 700px;
+    text-align: left;
+    margin-top: 0;
+}
+
+.buy-page ul {
+    width: 90%;
+    max-width: 700px;
 }
